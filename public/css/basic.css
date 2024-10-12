@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e8e8e8;
+}
+
+.logo-btn{
+    border: none;
+    stroke: none;
+    background-color: transparent;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+img{
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.bg-img-wrapper{
+    display: flex;
+    height: 300px;
+    background-color: #212121;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('../imgs/Designer.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.bg-img-wrapper h1{
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white; /* Цвет текста */
+    padding: 10px; /* Внутренние отступы для пространства вокруг текста */
+    border-radius: 5px; /* Закругление углов фона */
+    font-size: 3em; /* Размер шрифта */
+}
+.slogan-header{
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    font-family: "Boston", sans-serif;
+}
+.logo-btn {
+    cursor: pointer;
+}
+
+#Logo path {
+    transition: transform 0.05s ease-in-out; /* Плавное изменение позиции */
+}
+
+/* Эффект при наведении на каждую букву */
+#JLetter:hover {
+    transform: translateY(-8px); /* Поднимаем букву J */
+}
+
+#LLetter:hover {
+    transform: translateY(-6px); /* Поднимаем букву L */
+}
+
+#ALetter:hover {
+    transform: translateY(-4px); /* Поднимаем букву A */
+}
+
+#Dot:hover {
+    transform: translateY(-7px);
+}
+.body2{
+    /*padding-top:20px;*/
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+}
+.card-wrapper{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+

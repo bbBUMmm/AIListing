@@ -1,0 +1,40 @@
+/* From Uiverse.io by faxriddin20 */
+.button-container1 {
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+    border-radius: 10px;
+}
+.button-container2 {
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+    border-radius: 10px;
+}
+
+.button {
+    outline: 0 !important;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 20px;
+}
