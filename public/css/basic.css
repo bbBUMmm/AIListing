@@ -9,38 +9,41 @@ body {
     stroke: none;
     background-color: transparent;
 }
+
 .wrapper{
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-img{
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-}
-
-.bg-img-wrapper{
+.bg-img-wrapper {
+    position: relative;
     display: flex;
-    height: 300px;
-    background-color: #212121;
     align-items: center;
     justify-content: center;
-
-    background-image: url('../imgs/Designer.jpeg');
-    background-size: cover;
-    background-position: center;
+    height: 300px;
     width: 100%;
+    background-color: #212121;
 }
 
-.bg-img-wrapper h1{
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-    color: white; /* Цвет текста */
-    padding: 10px; /* Внутренние отступы для пространства вокруг текста */
-    border-radius: 5px; /* Закругление углов фона */
-    font-size: 3em; /* Размер шрифта */
+.bg-img-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
+
+.bg-img-wrapper h1 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 3em;
+    font-family: "Boston", sans-serif;
+    text-align: center;
+}
+
 .slogan-header{
     position: absolute;
     font-size: 35px;
@@ -52,28 +55,25 @@ img{
 }
 
 #Logo path {
-    transition: transform 0.05s ease-in-out; /* Плавное изменение позиции */
+    transition: transform 0.05s ease-in-out;
 }
 
-/* Эффект при наведении на каждую букву */
 #JLetter:hover {
-    transform: translateY(-8px); /* Поднимаем букву J */
+    transform: translateY(-8px);
 }
 
 #LLetter:hover {
-    transform: translateY(-6px); /* Поднимаем букву L */
+    transform: translateY(-6px);
 }
 
 #ALetter:hover {
-    transform: translateY(-4px); /* Поднимаем букву A */
+    transform: translateY(-4px);
 }
 
 #Dot:hover {
     transform: translateY(-7px);
 }
 .body2{
-    /*padding-top:20px;*/
-    height: 100%;
     width: 100%;
     background-color: #212121;
 }
@@ -84,4 +84,20 @@ img{
     display: flex;
     justify-content: space-around;
 }
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #181818;
+}
+
+footer a:hover {
+    text-shadow: #FC0 1px 0 10px;
+}
+
 
