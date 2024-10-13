@@ -1,23 +1,12 @@
 <?php
 require '../helpers.php';
 
-$routes = [
-  '/' => 'controllers/home.php',
-  '/find' => 'controllers/find.php',
-  '/profile' => 'controllers/profile/profile.php',
-  '/listings' => 'controllers/listings/index.php',
-    '/listings/create' => 'controllers/listings/create.php',
-  '404' => 'controllers/error/404.php',
-  '/privacy-policy' => 'controllers/rights/privacy-policy.php',
-  '/terms-of-service' => 'controllers/rights/terms-of-service.php',
+require getBasePath('RouterClass.php');
 
-];
+$router = new RouterClass();
+$rotes = require getBasePath('routes.php');
+
 $uri = $_SERVER['REQUEST_URI'];
+$method = $_SERVER['REQUEST_METHOD'];
 
-//inspect($uri, true);
-
-if (array_key_exists($uri, $routes)) {
-    require (getBasePath($routes[$uri]));
-} else{
-    require (getBasePath($routes['404']));
-}
+$router->route($uri, $method);
