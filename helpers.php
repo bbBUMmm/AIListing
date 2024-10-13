@@ -39,3 +39,25 @@ function loadPartial(string $name):void
     else echo "Partial $name does not exist";
 }
 
+/**
+ * Inspect values if $die = true
+ * end the script
+ *
+ * @param mixed $value
+ * @param bool $die
+ * @return void
+ *
+ */
+function inspect(mixed $value, bool $die):void
+{
+    if ($die){
+        die(var_dump($value));
+    } else {
+        echo '<pre>';
+        var_dump($value);
+        echo '</pre>';
+    }
+}
+
+
+

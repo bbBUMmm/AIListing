@@ -1,7 +1,7 @@
 <?php loadPartial('head');?>
-<div class="wrapper">
-    <?php loadPartial("navbar");?>
-</div>
+
+<?php loadPartial("navbar");?>
+
 <div id="hero" class="bg-img-wrapper">
     <?php loadPartial("hero");?>
 </div>
