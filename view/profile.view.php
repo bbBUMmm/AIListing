@@ -3,7 +3,7 @@ loadPartial("navbar");?>
 <div class="container">
     <div class="profile-wrapper">
         <div class="profile-header">
-            <h2>John Doe</h2>
+            <h2>Mykyta Prykhodko</h2>
             <p>@johndoe</p>
         </div>
 
