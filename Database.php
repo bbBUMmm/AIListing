@@ -12,7 +12,7 @@ class Database {
 
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
         ];
 
         try{
@@ -20,6 +20,26 @@ class Database {
         } catch (PDOException $e) {
             throw new PDOException("Database connection failed: " . $e->getMessage());
         }
+    }
+
+    /**
+     * @param string $sqlQuery
+     *
+     * @return PDOStatement
+     * @throws PDOException
+     */
+    public function query(string $sqlQuery): PDOStatement
+    {
+        try {
+//            Statement
+            $sth = $this->connection->prepare($sqlQuery);
+            $sth->execute();
+
+            return $sth;
+        } catch (PDOException $e) {
+            throw new PDOException("Database query failed: " . $e->getMessage());
+        }
+
     }
 
 }

@@ -12,12 +12,18 @@ function getBasePath(string $path = ''): string
 /**
  * Load view
  * @param string $name
+ * @param array $data
  * @return void
  */
-function loadView(string $name):void
+function loadView(string $name, array $data = []):void
 {
     $viewPath = getBasePath("view/$name.view.php");
+
     if (file_exists($viewPath)) {
+        //    convert data from the db into the php variable
+        //    so now we can use variable from the home controller
+        //    call listings in our home.view.php
+        extract($data);
         require $viewPath;
     }
     else echo "View $name does not exist";
@@ -30,10 +36,12 @@ function loadView(string $name):void
  * @param string $name
  * @return void
  */
-function loadPartial(string $name):void
+function loadPartial(string $name, array $data = []):void
 {
     $partialPath = getBasePath("view/partials/$name.php");
     if (file_exists($partialPath)) {
+
+        extract($data);
         require $partialPath;
     }
     else echo "Partial $name does not exist";

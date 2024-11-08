@@ -1,34 +1,14 @@
+
 <div class="card-wrapper">
-    <div class="card">
-        <a href="/listings">
-            <div class="card-info">
-                <p class="title">ChatGPT</p>
-            </div>
-        </a>
-    </div>
-    <div class="card">
-        <div class="card-info">
-            <p class="title">MidJourney</p>
+    <?php foreach ($listings as $listing) :?>
+        <div class="card">
+            <a href="/listings">
+                <div class="card-info">
+                    <p class="title">
+                        <?php echo $listing->ainame ?>
+                    </p>
+                </div>
+            </a>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-info">
-            <p class="title">CoPilot</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-info">
-            <p class="title">VEED</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-info">
-            <p class="title">Taskade</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-info">
-            <p class="title">Jasper.ai</p>
-        </div>
-    </div>
+    <?php endforeach; ?>
 </div>
