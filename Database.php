@@ -28,11 +28,16 @@ class Database {
      * @return PDOStatement
      * @throws PDOException
      */
-    public function query(string $sqlQuery): PDOStatement
+    public function query(string $sqlQuery, array $params = []): PDOStatement
     {
         try {
 //            Statement
             $sth = $this->connection->prepare($sqlQuery);
+
+//            Bind named parameters
+            foreach ($params as $param => $value) {
+                $sth->bindValue(':' . $param, $value );
+            }
             $sth->execute();
 
             return $sth;
