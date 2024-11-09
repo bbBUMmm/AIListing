@@ -1,0 +1,16 @@
+{
+  "name": "mprykhodko/ailist-php",
+  "description": "An app for taking notes on AI that you've used",
+  "authors": [
+    {
+      "name": "Mykyta Prykhodko",
+      "email": "myky.prykhokdo@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Framework\\":"Framework/",
+      "App\\": "App/"
+    }
+  }
+}

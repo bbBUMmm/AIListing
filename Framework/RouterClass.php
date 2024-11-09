@@ -1,5 +1,6 @@
 <?php
 
+namespace Framework;
 class RouterClass {
     protected array $routes = [];
 
@@ -8,17 +9,21 @@ class RouterClass {
      *
      * @param $method
      * @param $uri
-     * @param $controller
+     * @param $action
      * @return void
      */
-    public function registerRoute($method, $uri, $controller)
+    public function registerRoute($method, $uri, $action):void
     {
+        list($controller, $controllerMethod) = explode('@', $action);
+
+//        inspect($controller, true);
+//        inspect($controllerMethod, true);
         $this->routes[] = [
             'method' => $method,
             'uri' => $uri,
-            'controller' => $controller
+            'controller' => $controller,
+            'controllerMethod' => $controllerMethod
         ];
-
     }
 
 
@@ -77,10 +82,18 @@ class RouterClass {
      * @param $method
      * @return void
      */
-    public function route($uri, $method){
+    public function route($uri, $method)
+    {
         foreach($this->routes as $route){
             if($route['uri'] === $uri && $route['method'] === $method){
-                require getBasePath($route['controller']);
+//                Extract controller and controller method
+                $controller = 'App\\Controllers\\'.$route['controller'];
+                $controllerMethod = $route['controllerMethod'];
+
+//                Initialize the controller and call the method
+                $controllerInstance = new $controller();
+
+                $controllerInstance->$controllerMethod();
                 return;
             }
         }

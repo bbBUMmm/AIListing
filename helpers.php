@@ -17,7 +17,7 @@ function getBasePath(string $path = ''): string
  */
 function loadView(string $name, array $data = []):void
 {
-    $viewPath = getBasePath("view/$name.view.php");
+    $viewPath = getBasePath("App/view/$name.view.php");
 
     if (file_exists($viewPath)) {
         //    convert data from the db into the php variable
@@ -38,7 +38,7 @@ function loadView(string $name, array $data = []):void
  */
 function loadPartial(string $name, array $data = []):void
 {
-    $partialPath = getBasePath("view/partials/$name.php");
+    $partialPath = getBasePath("App/view/partials/$name.php");
     if (file_exists($partialPath)) {
 
         extract($data);

@@ -1,7 +1,19 @@
 <?php
+
+use Framework\Database;
+use Framework\RouterClass;
+
 require '../helpers.php';
-require getBasePath('Database.php');
-require getBasePath('RouterClass.php');
+require __DIR__ . '/../vendor/autoload.php';
+
+// Basic class autoloader
+// Good for small applications
+//spl_autoload_register(function ($class) {
+//    $path = getBasePath('Framework/' . $class . '.php');
+//    if (file_exists($path)) {
+//        require_once $path;
+//    }
+//});
 
 $config = require getBasePath('config/db.php');
 
