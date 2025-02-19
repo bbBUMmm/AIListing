@@ -1,2 +1,0 @@
-<?php
-echo "Find AI";
