@@ -81,10 +81,9 @@ class RouterClass {
      * Route the request
      *
      * @param $uri
-     * @param $method
      * @return void
      */
-    public function route($uri)
+    public function route($uri):void
     {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
 
@@ -101,8 +100,6 @@ class RouterClass {
 
             // Split the route URI into segments
             $routeSegments = explode('/', trim($route['uri'], '/'));
-
-            $match = true;
 
             // Check if the number of segments matches
             if (count($uriSegments) === count($routeSegments) && strtoupper($route['method'] === $requestMethod)) {

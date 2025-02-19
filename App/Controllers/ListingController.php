@@ -47,4 +47,59 @@ class ListingController
     public function find(){
         echo 'finding';
     }
+
+    public function store(): void{
+        // security
+        $allowedFields = ["ainame", "how_learned", "usage", "future_projects", "notes"];
+
+        $newAllowedData = array_intersect_key($_POST, array_flip($allowedFields));
+
+//        For now, it is just hardcoded
+//        $newAllowedData["user_id"] = 1;
+
+        $newSanitizedData = array_map('sanitize', $newAllowedData);
+
+        $requiredFields = ["ainame"];
+
+        $errors = [];
+
+        foreach ($requiredFields as $field) {
+            if (empty($newSanitizedData[$field]) || ValidationClass::string($newSanitizedData[$field])) {
+                $errors[$field] = ucfirst($field) . " is required";
+            }
+        }
+
+        if (!empty($errors)) {
+            loadView("create", [
+                'errors' => $errors,
+                'data' => $newSanitizedData
+            ]);
+        } else {
+            $fieldsForDatabase = [];
+
+            foreach ($newSanitizedData as $field => $value){
+                $fieldsForDatabase[] = "`$field`";
+            }
+
+            $fieldsForDatabase = implode(', ', $fieldsForDatabase);
+
+            $valuesForDatabase = [];
+
+            foreach ($newSanitizedData as $field => $value){
+                // Convert empty strings to null
+                if ($value === ''){
+                    $newSanitizedData[$field] = null;
+                }
+                $valuesForDatabase[] = ':'.$field;
+            }
+
+            $valuesForDatabase = implode(', ', $valuesForDatabase);
+
+            $query = "INSERT INTO ais ({$fieldsForDatabase}) VALUES ({$valuesForDatabase})";
+
+            $this->db->query($query, $newSanitizedData);
+
+            redirect("/");
+        }
+    }
 }
