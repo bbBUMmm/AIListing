@@ -1,2 +1,0 @@
-<?php
-echo "privacy policy";
