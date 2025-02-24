@@ -7,5 +7,6 @@
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="/css/flash.css">
     <link rel="stylesheet" href="/css/deleteButton.css">
+    <link rel="stylesheet" href="/css/rightsAndTerms.css">
 </head>
 <body>

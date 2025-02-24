@@ -14,7 +14,7 @@ loadPartial("flash");?>
                     <?php endforeach; ?>
                 <?php endif;?>
                 <label for="ai-name">AI Name</label>
-                <input id="ai-name" type="text" name="ainame" value="<?= $data['ai_name'] ?? '' ?>">
+                <input id="ai-name" type="text" name="ainame" value="<?= $data['ainame'] ?? '' ?>">
 
                 <label for="how-learned">How did you learn about it?</label>
                 <input id="how-learned" type="text" name="how_learned" value="<?= $data['how_learned'] ?? ''?>">
@@ -26,7 +26,9 @@ loadPartial("flash");?>
                 <textarea id="future-projects" name="future_projects"><?= $data['future_projects'] ?? '' ?></textarea>
 
                 <label for="notes">Notes</label>
-                <textarea id="notes" name="notes"></textarea>
+                <textarea id="notes" name="notes">
+                    <?= $data['notes'] ?? '' ?>
+                </textarea>
 
                 <button type="submit">Submit</button>
             </form>

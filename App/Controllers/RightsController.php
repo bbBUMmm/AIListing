@@ -5,10 +5,10 @@ namespace App\Controllers;
 class RightsController
 {
     public function terms(){
-        echo 'terms and services';
+        loadView('terms');
     }
 
     public function privacy(){
-        echo 'privacy policy';
+        loadView('rights');
     }
 }

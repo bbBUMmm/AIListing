@@ -73,7 +73,7 @@ class ListingController
         if (!empty($errors)) {
             loadView("create", [
 //                'errors' => $errors,
-//                'data' => $newSanitizedData
+                'data' => $newSanitizedData
             ]);
         } else {
             $fieldsForDatabase = [];

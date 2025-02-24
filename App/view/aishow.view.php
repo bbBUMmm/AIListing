@@ -4,10 +4,11 @@
     <div class="info-wrapper">
         <div class="info-header">
             <h2>AI Profile Overview</h2>
-
-            <div class="tags">
-                <span><?= $listing->aitags?></span>
-            </div>
+            <?php if (isset($listing->aitags)) : ?>
+                <div class="tags">
+                    <span><?= $listing->aitags ?></span>
+                </div>
+            <?php endif; ?>
             <form method="POST">
                 <input type="hidden" name="_method" value="DELETE">
                 <button class="deleteButton" type="submit">Delete</button>
@@ -17,27 +18,26 @@
 
         <div class="info-section">
             <h3><?= $listing->ainame ?></h3>
-            <p><!-- PHP echo or dynamic content placeholder for AI Name --><?= $listing->aidescription ?></p>
         </div>
 
         <div class="info-section">
             <h3>How did you learn about it?</h3>
-            <p><!-- PHP echo or dynamic content placeholder for How did you learn -->From an online course</p>
+            <p><?= $listing->how_learned?></p>
         </div>
 
         <div class="info-section">
             <h3>Where have you used it?</h3>
-            <p><!-- PHP echo or dynamic content placeholder for usage -->For customer support automation</p>
+            <p><?= $listing->usage?></p>
         </div>
 
         <div class="info-section">
             <h3>Projects where you plan to use it</h3>
-            <p><!-- PHP echo or dynamic content placeholder for future projects -->E-commerce platform, Chatbot integration, and Data analysis</p>
+            <p><?= $listing->future_projects?></p>
         </div>
 
         <div class="info-section">
             <h3>Notes</h3>
-            <p><!-- PHP echo or dynamic content placeholder for notes -->This AI has been incredibly helpful in improving the efficiency of various tasks.</p>
+            <p><?= $listing->notes ?></p>
         </div>
     </div>
 </div>
