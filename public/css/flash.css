@@ -1,0 +1,39 @@
+.flash-message-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: fixed;
+    top: 120px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.flash-message {
+    width: 400px;
+    height: 50px;
+    background-color: #28c76f;
+    border-color: #218838;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.flash-message-error {
+    width: 400px;
+    height: 50px;
+    background-color: #b00020;
+    border: 2px solid rgba(135, 0, 24, 0.19);
+    border-radius: 6px;
+
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flash-message-wrapper {
+            display: flex;
+            justify-content: flex-end; /* Aligns the message to the right */
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            z-index: 1000; /* Ensures it stays above other elements */
+        }
+
+        .flash-message {
+            width: 400px;
+            height: 50px;
+            background-color: #777777;
+            border: #e69500 solid 3px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flash-message-wrapper">
+        <div class="flash-message">
+            Here will be flash message displayed
+        </div>
+    </div>
+</body>
+</html>

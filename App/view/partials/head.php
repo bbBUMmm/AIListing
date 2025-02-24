@@ -5,5 +5,7 @@
     <link rel="stylesheet" href="/css/uiverse.css">
     <link rel="stylesheet" href="/css/card.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/flash.css">
+    <link rel="stylesheet" href="/css/deleteButton.css">
 </head>
 <body>

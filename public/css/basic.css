@@ -23,7 +23,7 @@ body {
     justify-content: center;
     height: 300px;
     width: 100%;
-    background-color: #212121;
+    background-color: #e8e8e8;
 }
 
 .bg-img-wrapper img {
@@ -75,7 +75,7 @@ body {
 }
 .body2{
     width: 100%;
-    background-color: #212121;
+    background-color: #e8e8e8;
 }
 .card-wrapper{
     margin-top: 20px;
@@ -194,7 +194,7 @@ a {
 .full-width-container {
     width: 100%;
     padding: 40px;
-    background-color: #212121;
+    background-color: #e8e8e8;
     box-sizing: border-box;
 }
 

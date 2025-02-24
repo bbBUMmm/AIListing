@@ -2,6 +2,8 @@
 
 <?php loadPartial("navbar");?>
 
+<?php loadPartial("flash"); ?>
+
 <!--ignore the error, the variable is accessible here-->
 <?php //inspect($listings[0]['ainame'], false); ?>
 

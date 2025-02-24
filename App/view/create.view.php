@@ -1,5 +1,7 @@
 <?php loadPartial("head");
-loadPartial("navbar");?>
+loadPartial("navbar");
+loadPartial("flash");?>
+
 <div class="container">
     <div class="form-wrapper">
         <div class="form">

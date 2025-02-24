@@ -59,20 +59,21 @@ class ListingController
 
         $newSanitizedData = array_map('sanitize', $newAllowedData);
 
-        $requiredFields = ["ainame"];
+        $requiredFields = ["ainame", "how_learned", "usage", "future_projects", "notes"];
 
         $errors = [];
 
         foreach ($requiredFields as $field) {
             if (empty($newSanitizedData[$field]) || ValidationClass::string($newSanitizedData[$field])) {
                 $errors[$field] = ucfirst($field) . " is required";
+                $_SESSION['error_message'][$field] = ucfirst($field) . " is required";
             }
         }
 
         if (!empty($errors)) {
             loadView("create", [
-                'errors' => $errors,
-                'data' => $newSanitizedData
+//                'errors' => $errors,
+//                'data' => $newSanitizedData
             ]);
         } else {
             $fieldsForDatabase = [];
@@ -101,5 +102,29 @@ class ListingController
 
             redirect("/");
         }
+    }
+
+    public function destroy($params): void
+    {
+        $id = $params['id'];
+
+//       Extract id to format it then to the db query parameters
+        $params = [
+            'id' => $id
+        ];
+
+        $listing = $this->db->query('SELECT * FROM ais WHERE idai = :id', $params)->fetch();
+
+        if (!$listing) {
+            ErrorController::notFound("AI not found");
+            $_SESSION['error_message'] = "AI not found";
+            return;
+        }
+
+        $this->db->query('DELETE FROM ais WHERE idai = :id', $params);
+
+        $_SESSION['success_message'] = "AI deleted successfully";
+
+        redirect('/');
     }
 }

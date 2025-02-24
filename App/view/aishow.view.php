@@ -1,3 +1,5 @@
+<?php loadPartial('head');?>
+
 <div class="full-width-container">
     <div class="info-wrapper">
         <div class="info-header">
@@ -6,6 +8,10 @@
             <div class="tags">
                 <span><?= $listing->aitags?></span>
             </div>
+            <form method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="deleteButton" type="submit">Delete</button>
+            </form>
 
         </div>
 
